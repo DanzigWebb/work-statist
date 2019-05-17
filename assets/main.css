@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+.names-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 1200px;
+  margin: auto;
+  height: 90vh;
+  align-items: center;
+  font-weight: bold;
+}
+.names-wrap p {
+  font-size: 26px;
+  font-weight: normal;
+  text-align: center;
+}
+.names-wrap span{
+  font-size: 40px;
+  display: block;
+}
+
