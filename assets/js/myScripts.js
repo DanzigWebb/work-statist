@@ -42,36 +42,44 @@ window.onload = function () {
       let arrNames = {
         am: 'Саша М.'
       }
-      
-      let nameAM = arr.filter(function (name) {
-        return name['gsx$исполнитель']['$t'] == 'Саша М.';
-      });
-      let nameAS = arr.filter(function (name) {
-        return name['gsx$исполнитель']['$t'] == 'Саша Ш.';
-      });
-      let nameMK = arr.filter(function (name) {
-        return name['gsx$исполнитель']['$t'] == 'Миша';
-      });
-      let nameAK = arr.filter(function (name) {
-        return name['gsx$исполнитель']['$t'] == 'Леша';
-      });
-      let nameNN = arr.filter(function (name) {
-        return name['gsx$исполнитель']['$t'] == 'Никита';
-      });
-      document.getElementById('nameAM').innerHTML = `<p>${nameAM[0]['gsx$исполнитель']['$t']}: <span>${nameAM.length}</span></p>`
-      document.getElementById('nameAS').innerHTML = `<p>${nameAS[0]['gsx$исполнитель']['$t']}: <span>${nameAS.length}</span></p>`
-      document.getElementById('nameMK').innerHTML = `<p>${nameMK[0]['gsx$исполнитель']['$t']}: <span>${nameMK.length}</span></p>`
-      document.getElementById('nameAK').innerHTML = `<p>${nameAK[0]['gsx$исполнитель']['$t']}: <span>${nameAK.length}</span></p>`
-      document.getElementById('nameNN').innerHTML = `<p>${nameNN[0]['gsx$исполнитель']['$t']}: <span>${nameNN.length}</span></p>`
 
-
-      console.log(nameAM[0]['gsx$исполнитель']['$t'] + ": " + nameAM.length)
-      console.log(nameAS[0]['gsx$исполнитель']['$t'] + ": " + nameAS.length)
-      console.log(nameMK[0]['gsx$исполнитель']['$t'] + ": " + nameMK.length)
-      console.log(nameAK[0]['gsx$исполнитель']['$t'] + ": " + nameAK.length)
-      console.log(nameNN[0]['gsx$исполнитель']['$t'] + ": " + nameNN.length)
-    }
-    
-  });
+      // фильтрация массива
+      let personFilter = function (param, name) {
+        return arr.filter(function (el) {
+          return el[`gsx$${param}`]['$t'] == name;
+        })
+      }
   
+
+
+      let nameAM = personFilter ('исполнитель', 'Саша М.');
+      let nameAS = personFilter ('исполнитель', 'Саша Ш.');
+      let nameMK = personFilter ('исполнитель', 'Майк');
+      let nameAK = personFilter ('исполнитель', 'Леша');
+      let nameRU = personFilter ('исполнитель', 'Рустам');
+      let nameNN = personFilter ('исполнитель', 'Никита');
+
+
+      console.log(`для лидрока: ${personFilter('длякого', 'Leadrock').length} из: ${arr.length} (${personFilter('длякого', 'Leadrock').length / arr.length * 100}%)`)
+
+
+      console.log(arr)
+      document.getElementById('nameAM').innerHTML = `<p>${nameAM[0]['gsx$исполнитель']['$t']}: <span>${nameAM.length}</span></p>`;
+      document.getElementById('nameAS').innerHTML = `<p>${nameAS[0]['gsx$исполнитель']['$t']}: <span>${nameAS.length}</span></p>`;
+      document.getElementById('nameMK').innerHTML = `<p>${nameMK[0]['gsx$исполнитель']['$t']}: <span>${nameMK.length}</span></p>`;
+      document.getElementById('nameAK').innerHTML = `<p>${nameAK[0]['gsx$исполнитель']['$t']}: <span>${nameAK.length}</span></p>`;
+      document.getElementById('nameNN').innerHTML = `<p>${nameNN[0]['gsx$исполнитель']['$t']}: <span>${nameNN.length}</span></p>`;
+      document.getElementById('nameRU').innerHTML = `<p>${nameRU[0]['gsx$исполнитель']['$t']}: <span>${nameRU.length}</span></p>`;
+
+
+      console.log(nameAM[0]['gsx$исполнитель']['$t'] + ": " + nameAM.length);
+      console.log(nameAS[0]['gsx$исполнитель']['$t'] + ": " + nameAS.length);
+      console.log(nameMK[0]['gsx$исполнитель']['$t'] + ": " + nameMK.length);
+      console.log(nameAK[0]['gsx$исполнитель']['$t'] + ": " + nameAK.length);
+      console.log(nameNN[0]['gsx$исполнитель']['$t'] + ": " + nameNN.length);
+      console.log(nameRU[0]['gsx$исполнитель']['$t'] + ": " + nameRU.length);
+    }
+
+  });
+
 }
