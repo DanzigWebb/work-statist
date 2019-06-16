@@ -60,24 +60,28 @@ window.onload = function () {
       let nameNN = personFilter ('исполнитель', 'Никита');
 
 
-      console.log(`для лидрока: ${personFilter('длякого', 'Leadrock').length} из: ${arr.length} (${personFilter('длякого', 'Leadrock').length / arr.length * 100}%)`)
+      console.log(`для лидрока: ${personFilter('длякого', 'Leadrock').length} из: ${arr.length} (${personFilter('длякого', 'Leadrock').length / arr.length * 100}%)`);
+      console.log(`для товарки: ${personFilter('длякого', 'Наша товарка').length} из: ${arr.length} (${personFilter('длякого', 'Наша товарка').length / arr.length * 100}%)`);
+      console.log(`для NAT: ${personFilter('длякого', 'Native').length} из: ${arr.length} (${personFilter('длякого', 'Native').length / arr.length * 100}%)`);
 
 
-      console.log(arr)
-      document.getElementById('nameAM').innerHTML = `<p>${nameAM[0]['gsx$исполнитель']['$t']}: <span>${nameAM.length}</span></p>`;
-      document.getElementById('nameAS').innerHTML = `<p>${nameAS[0]['gsx$исполнитель']['$t']}: <span>${nameAS.length}</span></p>`;
-      document.getElementById('nameMK').innerHTML = `<p>${nameMK[0]['gsx$исполнитель']['$t']}: <span>${nameMK.length}</span></p>`;
-      document.getElementById('nameAK').innerHTML = `<p>${nameAK[0]['gsx$исполнитель']['$t']}: <span>${nameAK.length}</span></p>`;
-      document.getElementById('nameNN').innerHTML = `<p>${nameNN[0]['gsx$исполнитель']['$t']}: <span>${nameNN.length}</span></p>`;
-      document.getElementById('nameRU').innerHTML = `<p>${nameRU[0]['gsx$исполнитель']['$t']}: <span>${nameRU.length}</span></p>`;
+      let nameHelper = function (name) {
+        return name[0]['gsx$исполнитель']['$t']
+      };
+      document.getElementById('nameAM').innerHTML = `<p>${nameHelper(nameAM)}: <span>${nameAM.length}</span></p> <p>${nameAM.length/arr.length*100}</p>`;
+      document.getElementById('nameAS').innerHTML = `<p>${nameHelper(nameAS)}: <span>${nameAS.length}</span></p> <p>${nameAS.length/arr.length*100}</p>`;
+      document.getElementById('nameMK').innerHTML = `<p>${nameHelper(nameMK)}: <span>${nameMK.length}</span></p> <p>${nameMK.length/arr.length*100}</p>`;
+      document.getElementById('nameAK').innerHTML = `<p>${nameHelper(nameAK)}: <span>${nameAK.length}</span></p> <p>${nameAK.length/arr.length*100}</p>`;
+      document.getElementById('nameNN').innerHTML = `<p>${nameHelper(nameNN)}: <span>${nameNN.length}</span></p> <p>${nameNN.length/arr.length*100}</p>`;
+      document.getElementById('nameRU').innerHTML = `<p>${nameHelper(nameRU)}: <span>${nameRU.length}</span></p> <p>${nameRU.length/arr.length*100}</p>`;
 
 
-      console.log(nameAM[0]['gsx$исполнитель']['$t'] + ": " + nameAM.length);
-      console.log(nameAS[0]['gsx$исполнитель']['$t'] + ": " + nameAS.length);
-      console.log(nameMK[0]['gsx$исполнитель']['$t'] + ": " + nameMK.length);
-      console.log(nameAK[0]['gsx$исполнитель']['$t'] + ": " + nameAK.length);
-      console.log(nameNN[0]['gsx$исполнитель']['$t'] + ": " + nameNN.length);
-      console.log(nameRU[0]['gsx$исполнитель']['$t'] + ": " + nameRU.length);
+      console.log(nameHelper(nameAM) + ": " + nameAM.length);
+      console.log(nameHelper(nameAS) + ": " + nameAS.length);
+      console.log(nameHelper(nameMK) + ": " + nameMK.length);
+      console.log(nameHelper(nameAK) + ": " + nameAK.length);
+      console.log(nameHelper(nameNN) + ": " + nameNN.length);
+      console.log(nameHelper(nameRU) + ": " + nameRU.length);
     }
 
   });
