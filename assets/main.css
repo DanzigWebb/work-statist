@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
 }
+
 .names-wrap {
   display: grid;
   grid-template-columns: 1fr;
@@ -10,13 +11,43 @@ body {
   align-items: center;
   font-weight: bold;
 }
+
 .names-wrap p {
   font-size: 26px;
   font-weight: normal;
   text-align: center;
 }
-.names-wrap span{
+
+.names-wrap span {
   font-size: 40px;
   display: block;
 }
+/* 
+.graf-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
 
+.graf-mini {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+  .graf-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+@media (max-width: 560px) {
+  .graf-mini {
+    grid-template-columns: 1fr
+  }
+}
+
+.main_graph {
+  max-width: 50%;
+}

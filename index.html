@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/main.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <title>проект</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/main.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <title>проект</title>
 </head>
 
 
 <body>
+  <div class="graf-grid">
+    <div class="main-graf-wrap">
+      <canvas id="main_graph"></canvas>
+    </div>
+
+    <div class="graf-mini">
+      <div class="mini-graf-wrap"><canvas id="chart_AM"></canvas></div>
+      <div class="mini-graf-wrap"><canvas id="chart_AS"></canvas></div>
+      <div class="mini-graf-wrap"><canvas id="chart_MK"></canvas></div>
+      <div class="mini-graf-wrap"><canvas id="chart_AK"></canvas></div>
+    </div>
+  </div>
 
 
-<!-- статистика -->
-<div class="names-wrap">
-  <div id="nameAM"></div>
-  <div id="nameAS"></div>
-  <div id="nameMK"></div>
-  <div id="nameAK"></div>
-  <div id="nameNN"></div>
-  <div id="nameRU"></div>
-</div>
+  <!-- статистика -->
+  <div class="names-wrap">
+    <div id="nameAM"></div>
+    <div id="nameAS"></div>
+    <div id="nameMK"></div>
+    <div id="nameAK"></div>
+    <div id="nameNN"></div>
+    <div id="nameRU"></div>
+  </div>
 
 
-</div>
-<script src="assets/js/myScripts.js"></script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="assets/js/myScripts.js"></script>
 </body>
+
 </html>
